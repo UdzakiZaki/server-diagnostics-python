@@ -1,0 +1,28 @@
+# секреты
+id_*
+*.pem
+*.key
+*.ppk
+.env
+secrets/
+
+# сырые данные
+raw/
+
+# бэкапы и образы
+*.tar.gz
+*.tgz
+*.zip
+*.qcow2
+*.vdi
+*.vmdk
+*.iso
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# система и редакторы
+Thumbs.db
+.vscode/
