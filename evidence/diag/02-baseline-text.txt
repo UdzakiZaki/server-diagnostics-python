@@ -1,0 +1,7 @@
+$ python3 /home/admin/diagnose.py --expect-text Test site --text --output /home/admin/evidence/diag/02-baseline-text.json
+[OK   ] service nginx is active (running)
+[OK   ] port    127.0.0.1:80 accepts connections (2.0 ms)
+[OK   ] http    HTTP 200 in 10.4 ms
+[OK   ] disk    / 90.6% free
+overall: ok (exit code 0)
+[exit code: 0]

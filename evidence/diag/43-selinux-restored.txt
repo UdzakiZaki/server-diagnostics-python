@@ -1,0 +1,76 @@
+$ python3 /home/admin/diagnose.py --expect-text Test site --output /home/admin/evidence/diag/43-selinux-restored.json
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:57:02+00:00",
+  "hostname": "localhost.localdomain",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "ok",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "service",
+      "status": "ok",
+      "message": "nginx is active (running)",
+      "duration_ms": 20.0,
+      "details": {
+        "service": "nginx",
+        "load_state": "loaded",
+        "active_state": "active",
+        "sub_state": "running",
+        "unit_file_state": "enabled",
+        "result": "success"
+      }
+    },
+    {
+      "name": "port",
+      "status": "ok",
+      "message": "127.0.0.1:80 accepts connections (2.6 ms)",
+      "duration_ms": 2.6,
+      "details": {
+        "host": "127.0.0.1",
+        "port": 80,
+        "timeout_s": 3.0,
+        "connect_ms": 2.6
+      }
+    },
+    {
+      "name": "http",
+      "status": "ok",
+      "message": "HTTP 200 in 9.4 ms",
+      "duration_ms": 9.4,
+      "details": {
+        "url": "http://127.0.0.1:80/",
+        "expected_status": 200,
+        "timeout_s": 3.0,
+        "status": 200,
+        "content_length": "19",
+        "server": "nginx/1.26.3",
+        "elapsed_ms": 9.4,
+        "expected_text": "Test site"
+      }
+    },
+    {
+      "name": "disk",
+      "status": "ok",
+      "message": "/ 90.6% free",
+      "duration_ms": 0.0,
+      "details": {
+        "min_free_percent": 10.0,
+        "paths": [
+          {
+            "path": "/",
+            "total_gb": 15.93,
+            "free_gb": 14.44,
+            "free_percent": 90.6
+          }
+        ]
+      }
+    }
+  ]
+}
+[exit code: 0]

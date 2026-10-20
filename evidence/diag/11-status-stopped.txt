@@ -1,0 +1,21 @@
+$ systemctl status nginx --no-pager -l
+○ nginx.service - The nginx HTTP and reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: disabled)
+     Active: inactive (dead) since Wed 2026-10-21 01:48:50 MSK; 145ms ago
+   Duration: 46min 9.857s
+ Invocation: a4e18006715b49329bb16d69b4c2ec6e
+    Process: 905 ExecStartPre=/usr/bin/rm -f /run/nginx.pid (code=exited, status=0/SUCCESS)
+    Process: 916 ExecStartPre=/usr/sbin/nginx -t (code=exited, status=0/SUCCESS)
+    Process: 923 ExecStart=/usr/sbin/nginx (code=exited, status=0/SUCCESS)
+   Main PID: 932 (code=exited, status=0/SUCCESS)
+   Mem peak: 5.6M
+        CPU: 92ms
+
+Oct 21 01:02:40 localhost.localdomain systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+Oct 21 01:02:40 localhost.localdomain nginx[916]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Oct 21 01:02:40 localhost.localdomain nginx[916]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Oct 21 01:02:40 localhost.localdomain systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+Oct 21 01:48:50 localhost.localdomain systemd[1]: Stopping nginx.service - The nginx HTTP and reverse proxy server...
+Oct 21 01:48:50 localhost.localdomain systemd[1]: nginx.service: Deactivated successfully.
+Oct 21 01:48:50 localhost.localdomain systemd[1]: Stopped nginx.service - The nginx HTTP and reverse proxy server.
+[exit code: 3]

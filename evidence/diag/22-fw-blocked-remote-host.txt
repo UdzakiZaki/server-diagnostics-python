@@ -1,0 +1,39 @@
+$ python src\diagnose.py --host 192.0.2.10 --checks port,http --timeout 3 --expect-text "Test site" --output raw\diag\22-fw-blocked-remote-host.json
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:53:50+00:00",
+  "hostname": "Zetik",
+  "target": {
+    "host": "192.0.2.10",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "fail",
+  "exit_code": 1,
+  "checks": [
+    {
+      "name": "port",
+      "status": "fail",
+      "message": "no answer from 192.0.2.10:80 within 3.0s: packets dropped (firewall?) or host unreachable",
+      "duration_ms": 3000.0,
+      "details": {
+        "host": "192.0.2.10",
+        "port": 80,
+        "timeout_s": 3.0
+      }
+    },
+    {
+      "name": "http",
+      "status": "fail",
+      "message": "no HTTP answer within 3.0s",
+      "duration_ms": 3031.0,
+      "details": {
+        "url": "http://192.0.2.10:80/",
+        "expected_status": 200,
+        "timeout_s": 3.0
+      }
+    }
+  ]
+}
+[exit code: 1]

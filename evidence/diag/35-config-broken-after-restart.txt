@@ -1,0 +1,91 @@
+$ sudo python3 /home/admin/diagnose.py --checks service,port,http,disk,config --expect-text Test site --output /home/admin/evidence/diag/35-config-broken-after-restart.json
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:56:32+00:00",
+  "hostname": "localhost.localdomain",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "fail",
+  "exit_code": 1,
+  "checks": [
+    {
+      "name": "service",
+      "status": "fail",
+      "message": "nginx is failed (failed), result=exit-code",
+      "duration_ms": 21.5,
+      "details": {
+        "service": "nginx",
+        "load_state": "loaded",
+        "active_state": "failed",
+        "sub_state": "failed",
+        "unit_file_state": "enabled",
+        "result": "exit-code",
+        "journal_tail": [
+          "nginx: [emerg] unknown directive \"bogus_directive\" in /etc/nginx/nginx.conf:7",
+          "nginx: configuration file /etc/nginx/nginx.conf test failed",
+          "nginx.service: Control process exited, code=exited, status=1/FAILURE",
+          "nginx.service: Failed with result 'exit-code'.",
+          "Failed to start nginx.service - The nginx HTTP and reverse proxy server."
+        ]
+      }
+    },
+    {
+      "name": "port",
+      "status": "fail",
+      "message": "connection refused on 127.0.0.1:80: host is reachable, nothing listens on the port",
+      "duration_ms": 2.1,
+      "details": {
+        "host": "127.0.0.1",
+        "port": 80,
+        "timeout_s": 3.0
+      }
+    },
+    {
+      "name": "http",
+      "status": "fail",
+      "message": "connection refused: nothing listens at http://127.0.0.1:80/",
+      "duration_ms": 9.8,
+      "details": {
+        "url": "http://127.0.0.1:80/",
+        "expected_status": 200,
+        "timeout_s": 3.0
+      }
+    },
+    {
+      "name": "disk",
+      "status": "ok",
+      "message": "/ 90.6% free",
+      "duration_ms": 0.0,
+      "details": {
+        "min_free_percent": 10.0,
+        "paths": [
+          {
+            "path": "/",
+            "total_gb": 15.93,
+            "free_gb": 14.44,
+            "free_percent": 90.6
+          }
+        ]
+      }
+    },
+    {
+      "name": "config",
+      "status": "fail",
+      "message": "nginx -t failed: nginx: [emerg] unknown directive \"bogus_directive\" in /etc/nginx/nginx.conf:7",
+      "duration_ms": 6.9,
+      "details": {
+        "command": "nginx -t",
+        "returncode": 1,
+        "output": [
+          "nginx: [emerg] unknown directive \"bogus_directive\" in /etc/nginx/nginx.conf:7",
+          "nginx: configuration file /etc/nginx/nginx.conf test failed"
+        ]
+      }
+    }
+  ]
+}
+[exit code: 1]

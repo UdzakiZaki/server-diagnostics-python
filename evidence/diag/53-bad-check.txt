@@ -1,0 +1,9 @@
+$ python3 /home/admin/diagnose.py --checks foo --output /home/admin/evidence/diag/53-bad-check.json
+usage: diagnose.py [-h] [--version] [--host HOST] [--port PORT] [--url URL]
+                   [--service SERVICE] [--expect-status EXPECT_STATUS]
+                   [--expect-text EXPECT_TEXT] [--disk-path DISK_PATH]
+                   [--min-free-percent MIN_FREE_PERCENT]
+                   [--nginx-bin NGINX_BIN] [--checks CHECKS]
+                   [--timeout TIMEOUT] [--output OUTPUT] [--text]
+diagnose.py: error: argument --checks: unknown check(s) ['foo']; choose from service,port,http,disk,config
+[exit code: 2]

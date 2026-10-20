@@ -1,0 +1,16 @@
+$ sudo aureport -k -i --start today
+
+Key Report
+===============================================
+# date time key success exe auid event
+===============================================
+1. 10/21/2026 01:02:37 nginx_config yes /usr/sbin/auditctl unset 12
+2. 10/21/2026 01:55:46 nginx_config yes /usr/bin/sed admin 323
+3. 10/21/2026 01:55:46 nginx_config yes /usr/bin/sed admin 324
+4. 10/21/2026 01:55:46 nginx_config yes /usr/bin/sed admin 325
+5. 10/21/2026 01:55:46 nginx_config yes /usr/bin/sed admin 326
+6. 10/21/2026 01:56:43 nginx_config yes /usr/bin/sed admin 371
+7. 10/21/2026 01:56:43 nginx_config yes /usr/bin/sed admin 372
+8. 10/21/2026 01:56:43 nginx_config yes /usr/bin/sed admin 373
+9. 10/21/2026 01:56:43 nginx_config yes /usr/bin/sed admin 374
+[exit code: 0]

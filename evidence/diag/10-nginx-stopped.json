@@ -1,0 +1,75 @@
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:48:50+00:00",
+  "hostname": "localhost.localdomain",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "fail",
+  "exit_code": 1,
+  "checks": [
+    {
+      "name": "service",
+      "status": "fail",
+      "message": "nginx is inactive (dead), result=success",
+      "duration_ms": 24.9,
+      "details": {
+        "service": "nginx",
+        "load_state": "loaded",
+        "active_state": "inactive",
+        "sub_state": "dead",
+        "unit_file_state": "enabled",
+        "result": "success",
+        "journal_tail": [
+          "nginx: configuration file /etc/nginx/nginx.conf test is successful",
+          "Started nginx.service - The nginx HTTP and reverse proxy server.",
+          "Stopping nginx.service - The nginx HTTP and reverse proxy server...",
+          "nginx.service: Deactivated successfully.",
+          "Stopped nginx.service - The nginx HTTP and reverse proxy server."
+        ]
+      }
+    },
+    {
+      "name": "port",
+      "status": "fail",
+      "message": "connection refused on 127.0.0.1:80: host is reachable, nothing listens on the port",
+      "duration_ms": 1.7,
+      "details": {
+        "host": "127.0.0.1",
+        "port": 80,
+        "timeout_s": 3.0
+      }
+    },
+    {
+      "name": "http",
+      "status": "fail",
+      "message": "connection refused: nothing listens at http://127.0.0.1:80/",
+      "duration_ms": 9.0,
+      "details": {
+        "url": "http://127.0.0.1:80/",
+        "expected_status": 200,
+        "timeout_s": 3.0
+      }
+    },
+    {
+      "name": "disk",
+      "status": "ok",
+      "message": "/ 90.6% free",
+      "duration_ms": 0.0,
+      "details": {
+        "min_free_percent": 10.0,
+        "paths": [
+          {
+            "path": "/",
+            "total_gb": 15.93,
+            "free_gb": 14.44,
+            "free_percent": 90.6
+          }
+        ]
+      }
+    }
+  ]
+}

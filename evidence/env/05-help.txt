@@ -1,0 +1,34 @@
+$ python3 /home/admin/diagnose.py --help
+usage: diagnose.py [-h] [--version] [--host HOST] [--port PORT] [--url URL]
+                   [--service SERVICE] [--expect-status EXPECT_STATUS]
+                   [--expect-text EXPECT_TEXT] [--disk-path DISK_PATH]
+                   [--min-free-percent MIN_FREE_PERCENT]
+                   [--nginx-bin NGINX_BIN] [--checks CHECKS]
+                   [--timeout TIMEOUT] [--output OUTPUT] [--text]
+
+Health checks for a Linux web server. JSON report, exit code 0/1/2/3.
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  --host HOST           host for the port/http checks (default 127.0.0.1)
+  --port PORT           TCP port (default 80)
+  --url URL             URL for the http check (default http://HOST:PORT/)
+  --service SERVICE     systemd unit name (default nginx)
+  --expect-status EXPECT_STATUS
+                        expected HTTP status (default 200)
+  --expect-text EXPECT_TEXT
+                        text that must appear in the HTTP body
+  --disk-path DISK_PATH
+                        path to check, repeatable (default /)
+  --min-free-percent MIN_FREE_PERCENT
+                        minimum free space in percent (default 10)
+  --nginx-bin NGINX_BIN
+                        nginx binary for the config check (default nginx)
+  --checks CHECKS       comma separated list from:
+                        service,port,http,disk,config (default
+                        service,port,http,disk)
+  --timeout TIMEOUT     timeout in seconds for every check (default 3)
+  --output OUTPUT       also write the JSON report to this file
+  --text                print a human readable summary instead of JSON
+[exit code: 0]

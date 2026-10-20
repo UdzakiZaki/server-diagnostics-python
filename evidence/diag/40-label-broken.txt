@@ -1,0 +1,3 @@
+$ ls -Z /srv/site/index.html
+ls: cannot access '/srv/site/index.html': Permission denied
+[exit code: 2]

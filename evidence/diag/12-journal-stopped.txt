@@ -1,0 +1,9 @@
+$ sudo journalctl -u nginx -n 8 --no-pager
+Oct 21 01:02:40 localhost.localdomain systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+Oct 21 01:02:40 localhost.localdomain nginx[916]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+Oct 21 01:02:40 localhost.localdomain nginx[916]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+Oct 21 01:02:40 localhost.localdomain systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+Oct 21 01:48:50 localhost.localdomain systemd[1]: Stopping nginx.service - The nginx HTTP and reverse proxy server...
+Oct 21 01:48:50 localhost.localdomain systemd[1]: nginx.service: Deactivated successfully.
+Oct 21 01:48:50 localhost.localdomain systemd[1]: Stopped nginx.service - The nginx HTTP and reverse proxy server.
+[exit code: 0]

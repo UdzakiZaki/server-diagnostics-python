@@ -1,0 +1,32 @@
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:57:14+00:00",
+  "hostname": "localhost.localdomain",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "fail",
+  "exit_code": 1,
+  "checks": [
+    {
+      "name": "disk",
+      "status": "fail",
+      "message": "free space below 99.0%: /: 90.6% free",
+      "duration_ms": 0.0,
+      "details": {
+        "min_free_percent": 99.0,
+        "paths": [
+          {
+            "path": "/",
+            "total_gb": 15.93,
+            "free_gb": 14.44,
+            "free_percent": 90.6
+          }
+        ]
+      }
+    }
+  ]
+}

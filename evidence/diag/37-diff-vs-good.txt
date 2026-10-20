@@ -1,0 +1,2 @@
+$ sudo diff -u /home/admin/nginx.conf.good /etc/nginx/nginx.conf
+[exit code: 0]

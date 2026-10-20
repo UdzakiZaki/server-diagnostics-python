@@ -1,0 +1,7 @@
+$ sudo tail -n 5 /var/log/nginx/error.log
+2026/10/21 01:51:47 [notice] 2583#2583: start worker processes
+2026/10/21 01:51:47 [notice] 2583#2583: start worker process 2584
+2026/10/21 01:51:47 [notice] 2583#2583: start worker process 2585
+2026/10/21 01:55:46 [emerg] 2656#2656: unknown directive "bogus_directive" in /etc/nginx/nginx.conf:7
+2026/10/21 01:56:08 [emerg] 2664#2664: unknown directive "bogus_directive" in /etc/nginx/nginx.conf:7
+[exit code: 0]

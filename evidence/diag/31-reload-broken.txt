@@ -1,0 +1,4 @@
+$ sudo systemctl reload nginx
+Job for nginx.service failed.
+See "systemctl status nginx.service" and "journalctl -xeu nginx.service" for details.
+[exit code: 1]

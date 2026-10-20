@@ -1,0 +1,22 @@
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:57:14+00:00",
+  "hostname": "localhost.localdomain",
+  "target": {
+    "host": "no-such-host.invalid",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "unknown",
+  "exit_code": 3,
+  "checks": [
+    {
+      "name": "port",
+      "status": "error",
+      "message": "cannot resolve host no-such-host.invalid: [Errno -2] Name or service not known",
+      "duration_ms": 22.0,
+      "details": {}
+    }
+  ]
+}

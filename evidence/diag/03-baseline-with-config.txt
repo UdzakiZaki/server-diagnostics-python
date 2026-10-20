@@ -1,0 +1,90 @@
+$ sudo python3 /home/admin/diagnose.py --checks service,port,http,disk,config --expect-text Test site --output /home/admin/evidence/diag/03-baseline-with-config.json
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:46:46+00:00",
+  "hostname": "localhost.localdomain",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "ok",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "service",
+      "status": "ok",
+      "message": "nginx is active (running)",
+      "duration_ms": 22.0,
+      "details": {
+        "service": "nginx",
+        "load_state": "loaded",
+        "active_state": "active",
+        "sub_state": "running",
+        "unit_file_state": "enabled",
+        "result": "success"
+      }
+    },
+    {
+      "name": "port",
+      "status": "ok",
+      "message": "127.0.0.1:80 accepts connections (3.3 ms)",
+      "duration_ms": 3.3,
+      "details": {
+        "host": "127.0.0.1",
+        "port": 80,
+        "timeout_s": 3.0,
+        "connect_ms": 3.3
+      }
+    },
+    {
+      "name": "http",
+      "status": "ok",
+      "message": "HTTP 200 in 9.9 ms",
+      "duration_ms": 9.9,
+      "details": {
+        "url": "http://127.0.0.1:80/",
+        "expected_status": 200,
+        "timeout_s": 3.0,
+        "status": 200,
+        "content_length": "19",
+        "server": "nginx/1.26.3",
+        "elapsed_ms": 9.9,
+        "expected_text": "Test site"
+      }
+    },
+    {
+      "name": "disk",
+      "status": "ok",
+      "message": "/ 90.6% free",
+      "duration_ms": 0.0,
+      "details": {
+        "min_free_percent": 10.0,
+        "paths": [
+          {
+            "path": "/",
+            "total_gb": 15.93,
+            "free_gb": 14.44,
+            "free_percent": 90.6
+          }
+        ]
+      }
+    },
+    {
+      "name": "config",
+      "status": "ok",
+      "message": "nginx configuration syntax is ok",
+      "duration_ms": 10.9,
+      "details": {
+        "command": "nginx -t",
+        "returncode": 0,
+        "output": [
+          "nginx: the configuration file /etc/nginx/nginx.conf syntax is ok",
+          "nginx: configuration file /etc/nginx/nginx.conf test is successful"
+        ]
+      }
+    }
+  ]
+}
+[exit code: 0]

@@ -1,0 +1,2 @@
+$ python -m py_compile src\diagnose.py
+[exit code: 0]

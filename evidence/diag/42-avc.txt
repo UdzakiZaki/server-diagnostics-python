@@ -1,0 +1,9 @@
+$ sudo ausearch -m avc -ts recent
+----
+time->Wed Oct 21 01:57:02 2026
+type=PROCTITLE msg=audit(1792537022.013:414): proctitle=6E67696E783A20776F726B65722070726F63657373
+type=PATH msg=audit(1792537022.013:414): item=0 name="/srv/site/index.html" inode=25290783 dev=fd:00 mode=0100640 ouid=1001 ogid=994 rdev=00:00 obj=unconfined_u:object_r:var_t:s0 nametype=NORMAL cap_fp=0 cap_fi=0 cap_fe=0 cap_fver=0 cap_frootid=0
+type=CWD msg=audit(1792537022.013:414): cwd="/"
+type=SYSCALL msg=audit(1792537022.013:414): arch=c000003e syscall=262 success=no exit=-13 a0=ffffff9c a1=5613e6a4989f a2=7ffe64a4d990 a3=0 items=1 ppid=2730 pid=2731 auid=4294967295 uid=994 gid=994 euid=994 suid=994 fsuid=994 egid=994 sgid=994 fsgid=994 tty=(none) ses=4294967295 comm="nginx" exe="/usr/sbin/nginx" subj=system_u:system_r:httpd_t:s0 key=(null)
+type=AVC msg=audit(1792537022.013:414): avc:  denied  { getattr } for  pid=2731 comm="nginx" path="/srv/site/index.html" dev="dm-0" ino=25290783 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:var_t:s0 tclass=file permissive=0
+[exit code: 0]

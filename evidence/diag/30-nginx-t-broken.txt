@@ -1,0 +1,4 @@
+$ sudo nginx -t
+nginx: [emerg] unknown directive "bogus_directive" in /etc/nginx/nginx.conf:7
+nginx: configuration file /etc/nginx/nginx.conf test failed
+[exit code: 1]

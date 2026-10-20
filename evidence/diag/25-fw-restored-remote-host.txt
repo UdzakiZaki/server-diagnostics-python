@@ -1,0 +1,45 @@
+$ python src\diagnose.py --host 192.0.2.10 --checks port,http --expect-text "Test site" --output raw\diag\25-fw-restored-remote-host.json
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-20T22:54:57+00:00",
+  "hostname": "Zetik",
+  "target": {
+    "host": "192.0.2.10",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "ok",
+  "exit_code": 0,
+  "checks": [
+    {
+      "name": "port",
+      "status": "ok",
+      "message": "192.0.2.10:80 accepts connections (16.0 ms)",
+      "duration_ms": 16.0,
+      "details": {
+        "host": "192.0.2.10",
+        "port": 80,
+        "timeout_s": 3.0,
+        "connect_ms": 16.0
+      }
+    },
+    {
+      "name": "http",
+      "status": "ok",
+      "message": "HTTP 200 in 31.0 ms",
+      "duration_ms": 31.0,
+      "details": {
+        "url": "http://192.0.2.10:80/",
+        "expected_status": 200,
+        "timeout_s": 3.0,
+        "status": 200,
+        "content_length": "19",
+        "server": "nginx/1.26.3",
+        "elapsed_ms": 31.0,
+        "expected_text": "Test site"
+      }
+    }
+  ]
+}
+[exit code: 0]
