@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import argparse
 import datetime
 import json
@@ -15,20 +16,22 @@ __version__ = "1.0.0"
 
 EXIT_OK = 0
 EXIT_FAIL = 1
-EXIT_USAGE = 2  # argparse already uses 2 for invalid arguments
+EXIT_USAGE = 2
 EXIT_UNKNOWN = 3
 
 ALL_CHECKS = ["service", "port", "http", "disk", "config"]
 DEFAULT_CHECKS = ["service", "port", "http", "disk"]
-BODY_LIMIT = 65536  # never read more than 64 KiB of an HTTP body
+BODY_LIMIT = 65536
 
 
 class CheckError(Exception):
+    pass
+
 
 def _result(name, status, message, started, details=None):
     return {
         "name": name,
-        "status": status,  # ok | fail | error
+        "status": status,
         "message": message,
         "duration_ms": round((time.monotonic() - started) * 1000, 1),
         "details": details or {},
@@ -58,10 +61,6 @@ def _journal_tail(unit, timeout, lines=5):
         return []
     return [line for line in proc.stdout.splitlines() if line.strip()]
 
-
-# --------------------------------------------------------------------------
-# Checks. Each returns a result dict, or raises CheckError if it cannot run.
-# --------------------------------------------------------------------------
 
 def check_service(args):
     started = time.monotonic()
@@ -115,14 +114,12 @@ def check_port(args):
             pass
         details["connect_ms"] = round((time.monotonic() - connect_started) * 1000, 1)
     except ConnectionRefusedError:
-        # The host answered with RST: it is reachable, but nothing listens.
         return _result(
             "port", "fail",
             "connection refused on %s: host is reachable, nothing listens on the port" % target,
             started, details,
         )
     except socket.timeout:
-        # No answer at all: packets are dropped (firewall) or the host is unreachable.
         return _result(
             "port", "fail",
             "no answer from %s within %ss: packets dropped (firewall?) or host unreachable"
@@ -155,7 +152,6 @@ def check_http(args):
         with urllib.request.urlopen(request, timeout=args.timeout) as response:
             status, headers, body = response.status, response.headers, response.read(BODY_LIMIT)
     except urllib.error.HTTPError as exc:
-        # 4xx/5xx: the server answered, so we still have a status to evaluate.
         status, headers = exc.code, exc.headers
         try:
             body = exc.read(BODY_LIMIT)
@@ -251,10 +247,6 @@ CHECKS = {
 }
 
 
-# --------------------------------------------------------------------------
-# Orchestration
-# --------------------------------------------------------------------------
-
 def run_checks(args):
     results = []
     for name in args.checks:
@@ -263,14 +255,14 @@ def run_checks(args):
             results.append(CHECKS[name](args))
         except CheckError as exc:
             results.append(_result(name, "error", str(exc), started))
-        except Exception as exc:  # a bug in one check must not kill the whole report
+        except Exception as exc:
             results.append(_result(name, "error", "unexpected %s: %s" % (type(exc).__name__, exc), started))
     return results
 
 
 def summarize(results):
     statuses = {r["status"] for r in results}
-    if "fail" in statuses:  # a confirmed problem outranks an unknown state
+    if "fail" in statuses:
         return "fail", EXIT_FAIL
     if "error" in statuses:
         return "unknown", EXIT_UNKNOWN
@@ -332,7 +324,7 @@ def build_parser():
 
 
 def main(argv=None):
-    args = build_parser().parse_args(argv)  # exits with code 2 on invalid arguments
+    args = build_parser().parse_args(argv)
     if args.disk_path is None:
         args.disk_path = ["/"]
 
@@ -355,7 +347,7 @@ def main(argv=None):
                 handle.write(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
         except OSError as exc:
             print("cannot write %s: %s" % (args.output, exc), file=sys.stderr)
-            if exit_code == EXIT_OK:  # a report that was not saved is not a clean result
+            if exit_code == EXIT_OK:
                 overall, exit_code = "unknown", EXIT_UNKNOWN
                 report["overall"], report["exit_code"] = overall, exit_code
 
