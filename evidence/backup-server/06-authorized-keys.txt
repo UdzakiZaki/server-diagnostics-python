@@ -1,0 +1,3 @@
+$ sudo cat /home/backup/.ssh/authorized_keys
+restrict,from="192.0.2.10" ssh-ed25519 <public-key> backup-main
+[exit code: 0]

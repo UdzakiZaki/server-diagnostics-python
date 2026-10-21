@@ -1,0 +1,2 @@
+$ scp -i C:\Users\user\.ssh\id_ed25519_vm -r "admin@192.0.2.10:~/evidence/backup" raw\vm1\
+[exit code: 0]

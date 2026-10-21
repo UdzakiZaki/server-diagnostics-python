@@ -1,0 +1,6 @@
+$ bash -c hostnamectl --static; getenforce; sudo firewall-cmd --state; rpm -q rsync
+srv-backup
+Enforcing
+running
+rsync-3.4.4-1.el10.x86_64
+[exit code: 0]

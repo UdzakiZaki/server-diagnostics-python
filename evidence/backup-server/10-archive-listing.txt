@@ -1,0 +1,3 @@
+$ sudo bash -c tar -tzvf "$(ls -t /srv/backups/main/main-*.tar.gz | head -1)" | head -25
+bash: line 1: tar: command not found
+[exit code: 0]

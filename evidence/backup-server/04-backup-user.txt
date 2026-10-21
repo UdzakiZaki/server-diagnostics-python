@@ -1,0 +1,6 @@
+$ bash -c id backup; sudo ls -ldZ /srv/backups/main; df -h /srv
+uid=1001(backup) gid=1001(backup) groups=1001(backup)
+drwx------. 2 backup backup unconfined_u:object_r:var_t:s0 6 Oct 21 17:53 /srv/backups/main
+Filesystem           Size  Used Avail Use% Mounted on
+/dev/mapper/cs-root   16G  1.6G   15G  10% /
+[exit code: 0]

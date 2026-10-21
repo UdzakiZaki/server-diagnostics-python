@@ -1,0 +1,10 @@
+$ Get-FileHash src\diagnose.py -Algorithm SHA256 | Format-List
+
+
+Algorithm : SHA256
+Hash      : C9B8E118500883D08916D7C898D2FE3CB4A1D6190937460DABF10BD9E5547487
+Path      : C:\Users\user\Documents\projects\server-diagnostics-python\src\diagnose.py
+
+
+
+[exit code: 0]

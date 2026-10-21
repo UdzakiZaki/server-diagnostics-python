@@ -1,0 +1,2 @@
+$ sudo sshd -t
+[exit code: 0]

@@ -1,0 +1,13 @@
+$ sudo ls -lh /srv/backups/main
+total 80K
+-rw-r--r--. 1 backup backup 12K Oct 21 18:03 main-20261021-180332.tar.gz
+-rw-r--r--. 1 backup backup  94 Oct 21 18:03 main-20261021-180332.tar.gz.sha256
+-rw-r--r--. 1 backup backup 12K Oct 21 18:10 main-20261021-181031.tar.gz
+-rw-r--r--. 1 backup backup  94 Oct 21 18:10 main-20261021-181031.tar.gz.sha256
+-rw-r--r--. 1 backup backup 12K Oct 21 18:12 main-20261021-181222.tar.gz
+-rw-r--r--. 1 backup backup  94 Oct 21 18:12 main-20261021-181222.tar.gz.sha256
+-rw-r--r--. 1 backup backup 12K Oct 21 18:14 main-20261021-181430.tar.gz
+-rw-r--r--. 1 backup backup  94 Oct 21 18:14 main-20261021-181430.tar.gz.sha256
+-rw-r--r--. 1 backup backup 12K Oct 21 18:16 main-20261021-181625.tar.gz
+-rw-r--r--. 1 backup backup  94 Oct 21 18:16 main-20261021-181625.tar.gz.sha256
+[exit code: 0]
