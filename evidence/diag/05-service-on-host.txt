@@ -1,4 +1,4 @@
-$ python src\diagnose.py --checks service --text
+$ python src\diagnose.py --checks service --text --output raw\audit\05-service-on-host.json
 [ERROR] service systemctl not found: this is not a systemd host
 overall: unknown (exit code 3)
 [exit code: 3]

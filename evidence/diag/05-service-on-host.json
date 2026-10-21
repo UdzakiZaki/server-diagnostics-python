@@ -1,0 +1,22 @@
+{
+  "tool": "server-diagnostics",
+  "version": "1.0.0",
+  "timestamp": "2026-10-21T20:03:37+00:00",
+  "hostname": "Zetik",
+  "target": {
+    "host": "127.0.0.1",
+    "port": 80,
+    "service": "nginx"
+  },
+  "overall": "unknown",
+  "exit_code": 3,
+  "checks": [
+    {
+      "name": "service",
+      "status": "error",
+      "message": "systemctl not found: this is not a systemd host",
+      "duration_ms": 0.0,
+      "details": {}
+    }
+  ]
+}
