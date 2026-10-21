@@ -1,0 +1,5 @@
+$ sudo ls -lZ /root/.ssh
+total 8
+-rw-------. 1 root root unconfined_u:object_r:ssh_home_t:s0 399 Oct 21 17:54 id_backup
+-rw-r--r--. 1 root root unconfined_u:object_r:ssh_home_t:s0  93 Oct 21 17:54 id_backup.pub
+[exit code: 0]

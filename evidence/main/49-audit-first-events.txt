@@ -1,0 +1,18 @@
+$ bash -c sudo\ env\ LC_ALL=C\ aureport\ -k\ -i\ --start\ 10/21/2026\ 18:19:00\ --end\ 10/21/2026\ 18:25:00\ \|\ head\ -15
+Error parsing start date (10/21/2026)
+usage: aureport [options]
+	-a,--avc			Avc report
+	-au,--auth			Authentication report
+	--comm				Commands run report
+	-c,--config			Config change report
+	-cr,--crypto			Crypto report
+	--debug				Write malformed events that are skipped to stderr
+	--eoe-timeout secs		End of Event Timeout
+	-e,--event			Event report
+	--escape option			Escape output
+	-f,--file			File name report
+	--failed			only failed events in report
+	-h,--host			Remote Host name report
+	--help				help
+	-i,--interpret			Interpretive mode
+[exit code: 0]

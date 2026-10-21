@@ -1,0 +1,3 @@
+$ sudo ssh-keygen -lf /root/.ssh/id_backup.pub
+256 SHA256:<fingerprint> backup-main (ED25519)
+[exit code: 0]

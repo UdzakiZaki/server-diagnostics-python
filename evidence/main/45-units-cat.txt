@@ -1,0 +1,26 @@
+$ systemctl cat backup-site.service backup-site.timer
+# /etc/systemd/system/backup-site.service
+[Unit]
+Description=Back up the site and its configuration to the backup server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/backup-site.sh
+SyslogIdentifier=backup-site
+TimeoutStartSec=15min
+Nice=10
+
+# /etc/systemd/system/backup-site.timer
+[Unit]
+Description=Run the site backup every day
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+[exit code: 0]

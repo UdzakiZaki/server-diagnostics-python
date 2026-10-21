@@ -1,0 +1,16 @@
+$ bash -c time sudo /usr/local/sbin/restore-site.sh
+restore-site: using main-20261021-181955.tar.gz
+restore-site: verifying checksum
+main-20261021-181955.tar.gz: OK
+restore-site: extracting: srv/site etc/nginx
+restore-site: restoring SELinux contexts
+restore-site: checking nginx configuration and reloading
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+restore-site: site answers HTTP 200
+restore-site: finished in 2.1 s
+
+real	0m2.127s
+user	0m0.008s
+sys	0m0.012s
+[exit code: 0]

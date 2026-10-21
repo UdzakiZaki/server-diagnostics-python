@@ -1,0 +1,7 @@
+$ systemctl list-timers backup-site.timer --no-pager
+NEXT                        LEFT LAST                         PASSED UNIT              ACTIVATES
+Thu 2026-10-22 03:04:25 MSK   8h Wed 2026-10-21 18:16:25 MSK 52s ago backup-site.timer backup-site.service
+
+1 timers listed.
+Pass --all to see loaded but inactive timers, too.
+[exit code: 0]

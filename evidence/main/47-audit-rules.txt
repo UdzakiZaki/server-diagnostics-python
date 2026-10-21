@@ -1,0 +1,3 @@
+$ sudo auditctl -l
+-w /etc/nginx -p wa -k nginx_config
+[exit code: 0]

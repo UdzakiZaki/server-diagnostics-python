@@ -1,0 +1,3 @@
+$ sudo bash -c cd\ /srv/site\ \&\&\ find\ .\ -type\ f\ -exec\ sha256sum\ \{\}\ +\ \|\ sort\ -k2\ \|\ diff\ -\ /root/manifest-before.sha256\ \&\&\ echo\ MANIFEST_IDENTICAL
+MANIFEST_IDENTICAL
+[exit code: 0]

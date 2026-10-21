@@ -1,0 +1,11 @@
+$ sudo env SSH_KEY=/root/.ssh/nope /usr/local/sbin/backup-site.sh
+backup-site: creating archive main-20261021-180850.tar.gz
+backup-site: calculating checksum
+backup-site: archive size: 12K
+backup-site: copying to backup@192.0.2.20:/srv/backups/main
+Warning: Identity file /root/.ssh/nope not accessible: No such file or directory.
+backup@192.0.2.20: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(232) [sender=3.4.4]
+backup-site: FAILED at line 44 (exit 255)
+[exit code: 255]

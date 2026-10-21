@@ -1,0 +1,3 @@
+$ curl -s http://localhost
+<h1>Test site</h1>
+[exit code: 0]

@@ -1,0 +1,3 @@
+$ bash -c cut -c1-8 /etc/machine-id
+3bf64b0d
+[exit code: 0]

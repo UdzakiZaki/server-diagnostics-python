@@ -1,0 +1,16 @@
+$ systemctl status backup-site.service --no-pager -l
+○ backup-site.service - Back up the site and its configuration to the backup server
+     Loaded: loaded (/etc/systemd/system/backup-site.service; static)
+     Active: inactive (dead)
+
+Oct 21 18:03:32 srv-main backup-site[2569]: backup-site: creating archive main-20261021-180332.tar.gz
+Oct 21 18:03:32 srv-main backup-site[2569]: backup-site: calculating checksum
+Oct 21 18:03:32 srv-main backup-site[2569]: backup-site: archive size: 12K
+Oct 21 18:03:32 srv-main backup-site[2569]: backup-site: copying to backup@192.0.2.20:/srv/backups/main
+Oct 21 18:03:32 srv-main backup-site[2569]: backup-site: verifying checksum on the backup server
+Oct 21 18:03:33 srv-main backup-site[2582]: main-20261021-180332.tar.gz: OK
+Oct 21 18:03:33 srv-main backup-site[2569]: backup-site: removing old copies (keep 7 on the server, 2 locally)
+Oct 21 18:03:33 srv-main backup-site[2569]: backup-site: done in 1 s: main-20261021-180332.tar.gz
+Oct 21 18:03:33 srv-main systemd[1]: backup-site.service: Deactivated successfully.
+Oct 21 18:03:33 srv-main systemd[1]: Finished backup-site.service - Back up the site and its configuration to the backup server.
+[exit code: 3]

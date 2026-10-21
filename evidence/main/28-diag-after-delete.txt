@@ -1,0 +1,7 @@
+$ python3 /home/admin/diagnose.py --expect-text Test site --text
+[OK   ] service nginx is active (running)
+[OK   ] port    127.0.0.1:80 accepts connections (2.8 ms)
+[FAIL ] http    HTTP 404, expected 200
+[OK   ] disk    / 90.4% free
+overall: fail (exit code 1)
+[exit code: 1]

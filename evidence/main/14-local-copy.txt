@@ -1,0 +1,5 @@
+$ sudo ls -lh /var/backups/site
+total 16K
+-rw-r--r--. 1 root root 12K Oct 21 18:03 main-20261021-180332.tar.gz
+-rw-r--r--. 1 root root  94 Oct 21 18:03 main-20261021-180332.tar.gz.sha256
+[exit code: 0]

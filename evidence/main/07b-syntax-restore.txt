@@ -1,0 +1,2 @@
+$ bash -n /home/admin/restore-site.sh
+[exit code: 0]

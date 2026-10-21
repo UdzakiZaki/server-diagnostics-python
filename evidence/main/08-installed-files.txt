@@ -1,0 +1,7 @@
+$ ls -lZ /usr/local/sbin/backup-site.sh /usr/local/sbin/restore-site.sh /etc/systemd/system/backup-site.service /etc/systemd/system/backup-site.timer /etc/default/backup-site
+-rw-r--r--. 1 root root unconfined_u:object_r:etc_t:s0             27 Oct 21 18:02 /etc/default/backup-site
+-rw-r--r--. 1 root root system_u:object_r:systemd_unit_file_t:s0  259 Oct 21 18:02 /etc/systemd/system/backup-site.service
+-rw-r--r--. 1 root root system_u:object_r:systemd_unit_file_t:s0  158 Oct 21 18:02 /etc/systemd/system/backup-site.timer
+-rwxr-x---. 1 root root system_u:object_r:bin_t:s0               1912 Oct 21 18:02 /usr/local/sbin/backup-site.sh
+-rwxr-x---. 1 root root system_u:object_r:bin_t:s0               1867 Oct 21 18:02 /usr/local/sbin/restore-site.sh
+[exit code: 0]

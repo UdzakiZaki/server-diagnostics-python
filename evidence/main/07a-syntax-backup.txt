@@ -1,0 +1,2 @@
+$ bash -n /home/admin/backup-site.sh
+[exit code: 0]

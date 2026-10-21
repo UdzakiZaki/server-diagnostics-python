@@ -1,0 +1,8 @@
+$ sudo bash -c cd /srv/site && find . -type f -exec sha256sum {} + | sort -k2
+14008479e56773d3252ed275b957bdde7bc73d6fb84b6ad3fd6306fabb339bb1  ./assets/file1.bin
+35f4f82c7099e03147b0089e299127d449986382f91e047a68dab11616f61ecd  ./assets/file2.bin
+462024a24ee9cef092ce9259fe0e4dd1cd7e6e7d46aa50645a0582c828cad82b  ./assets/file3.bin
+65841b1f3faed0a9efc7914d82013f163d13c259c0bcf5c39a8a2590ac0bfcd3  ./assets/file4.bin
+263a225cd44c14121da461d47a94b6ff30844d6aef4fcdd5ee8a1d8eb37f0835  ./assets/file5.bin
+e3b57752f18ce31bd0b6d27bee3b937280837f9b2cdfa44018be69c3b307556e  ./index.html
+[exit code: 0]

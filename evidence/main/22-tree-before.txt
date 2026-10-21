@@ -1,0 +1,14 @@
+$ sudo ls -lRZ /srv/site
+/srv/site:
+total 4
+drwxr-xr-x. 2 deploy deploy unconfined_u:object_r:httpd_sys_content_t:s0 91 Oct 21 18:19 assets
+-rw-r-----. 1 deploy nginx  unconfined_u:object_r:httpd_sys_content_t:s0 19 Oct 18 19:06 index.html
+
+/srv/site/assets:
+total 25600
+-rw-r--r--. 1 deploy deploy unconfined_u:object_r:httpd_sys_content_t:s0 5242880 Oct 21 18:19 file1.bin
+-rw-r--r--. 1 deploy deploy unconfined_u:object_r:httpd_sys_content_t:s0 5242880 Oct 21 18:19 file2.bin
+-rw-r--r--. 1 deploy deploy unconfined_u:object_r:httpd_sys_content_t:s0 5242880 Oct 21 18:19 file3.bin
+-rw-r--r--. 1 deploy deploy unconfined_u:object_r:httpd_sys_content_t:s0 5242880 Oct 21 18:19 file4.bin
+-rw-r--r--. 1 deploy deploy unconfined_u:object_r:httpd_sys_content_t:s0 5242880 Oct 21 18:19 file5.bin
+[exit code: 0]

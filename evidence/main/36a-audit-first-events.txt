@@ -1,0 +1,9 @@
+$ bash -c sudo\ aureport\ -k\ -i\ --start\ recent\ \|\ head\ -12
+
+Key Report
+===============================================
+# date time key success exe auid event
+===============================================
+<no events of interest were found>
+
+[exit code: 0]

@@ -1,0 +1,14 @@
+$ sudo journalctl -u backup-site.service -n 12 --no-pager
+Oct 21 18:19:55 srv-main systemd[1]: Starting backup-site.service - Back up the site and its configuration to the backup server...
+Oct 21 18:19:55 srv-main backup-site[3011]: backup-site: creating archive main-20261021-181955.tar.gz
+Oct 21 18:19:56 srv-main backup-site[3011]: backup-site: calculating checksum
+Oct 21 18:19:56 srv-main backup-site[3011]: backup-site: archive size: 26M
+Oct 21 18:19:56 srv-main backup-site[3011]: backup-site: copying to backup@192.0.2.20:/srv/backups/main
+Oct 21 18:19:57 srv-main backup-site[3011]: backup-site: verifying checksum on the backup server
+Oct 21 18:19:58 srv-main backup-site[3024]: main-20261021-181955.tar.gz: OK
+Oct 21 18:19:58 srv-main backup-site[3011]: backup-site: removing old copies (keep 7 on the server, 2 locally)
+Oct 21 18:19:58 srv-main backup-site[3011]: backup-site: done in 3 s: main-20261021-181955.tar.gz
+Oct 21 18:19:58 srv-main systemd[1]: backup-site.service: Deactivated successfully.
+Oct 21 18:19:58 srv-main systemd[1]: Finished backup-site.service - Back up the site and its configuration to the backup server.
+Oct 21 18:19:58 srv-main systemd[1]: backup-site.service: Consumed 1.221s CPU time, 29.6M memory peak.
+[exit code: 0]

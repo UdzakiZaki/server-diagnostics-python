@@ -1,0 +1,6 @@
+$ sudo bash -c A=$(ls -t /var/backups/site/restore/main-*.tar.gz | head -1); echo "archive: $(basename "$A")"; echo "in archive: $(tar -xzOf "$A" etc/nginx/nginx.conf | sha256sum | cut -d" " -f1)"; echo "on disk:    $(sha256sum /etc/nginx/nginx.conf | cut -d" " -f1)"; echo "tampered lines: $(grep -c tampered /etc/nginx/nginx.conf || true)"
+archive: main-20261021-181955.tar.gz
+in archive: f9bd5b396caeeecaa295899c24257c16bfc142c07b21aff0834ce51c8e309f9a
+on disk:    f9bd5b396caeeecaa295899c24257c16bfc142c07b21aff0834ce51c8e309f9a
+tampered lines: 0
+[exit code: 0]

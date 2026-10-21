@@ -1,0 +1,12 @@
+$ systemctl status backup-site.timer --no-pager -l
+● backup-site.timer - Run the site backup every day
+     Loaded: loaded (/etc/systemd/system/backup-site.timer; enabled; preset: disabled)
+    Drop-In: /etc/systemd/system/backup-site.timer.d
+             └─demo.conf
+     Active: active (running) since Wed 2026-10-21 18:10:31 MSK; 5min ago
+ Invocation: 2743fc1a82714005b327e7b543d7af9f
+    Trigger: n/a
+   Triggers: ● backup-site.service
+
+Oct 21 18:10:31 srv-main systemd[1]: Started backup-site.timer - Run the site backup every day.
+[exit code: 0]

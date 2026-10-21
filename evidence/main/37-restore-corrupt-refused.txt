@@ -1,0 +1,7 @@
+$ sudo /usr/local/sbin/restore-site.sh main-corrupt.tar.gz
+restore-site: using main-corrupt.tar.gz
+restore-site: verifying checksum
+main-corrupt.tar.gz: FAILED
+sha256sum: WARNING: 1 computed checksum did NOT match
+restore-site: checksum FAILED, nothing was restored
+[exit code: 1]

@@ -1,0 +1,6 @@
+$ sudo sha256sum /usr/local/sbin/backup-site.sh /usr/local/sbin/restore-site.sh /etc/systemd/system/backup-site.service /etc/systemd/system/backup-site.timer
+f015ab77d7977593e767f6cec11991a42e915b4b8ccc6c73cf4f644071024161  /usr/local/sbin/backup-site.sh
+9e733df239634a9b2921795e65816c3265e32b3e552b0a662d82a96b6e3a1744  /usr/local/sbin/restore-site.sh
+0217cce8a5b37a93df3613de869874e6d2d71059c16c21c70eedf134ba4a8b50  /etc/systemd/system/backup-site.service
+76cf8bc5f67cd3898e83f976c1934b03ea6eea3682488da02f478a39edeac4cd  /etc/systemd/system/backup-site.timer
+[exit code: 0]

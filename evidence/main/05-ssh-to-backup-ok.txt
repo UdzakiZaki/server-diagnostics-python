@@ -1,0 +1,4 @@
+$ sudo ssh -i /root/.ssh/id_backup -o BatchMode=yes backup@192.0.2.20 hostname; whoami
+srv-backup
+backup
+[exit code: 0]

@@ -1,0 +1,4 @@
+$ rpm -q rsync tar
+package rsync is not installed
+package tar is not installed
+[exit code: 2]

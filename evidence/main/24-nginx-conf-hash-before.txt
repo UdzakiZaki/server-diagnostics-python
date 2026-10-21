@@ -1,0 +1,3 @@
+$ sudo sha256sum /etc/nginx/nginx.conf
+f9bd5b396caeeecaa295899c24257c16bfc142c07b21aff0834ce51c8e309f9a  /etc/nginx/nginx.conf
+[exit code: 0]

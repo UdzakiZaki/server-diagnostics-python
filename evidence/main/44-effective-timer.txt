@@ -1,0 +1,7 @@
+$ systemctl show backup-site.timer -p FragmentPath -p DropInPaths -p TimersCalendar -p RandomizedDelayUSec -p Persistent
+TimersCalendar={ OnCalendar=*-*-* 03:00:00 ; next_elapse=Thu 2026-10-22 03:00:00 MSK }
+RandomizedDelayUSec=5min
+Persistent=yes
+FragmentPath=/etc/systemd/system/backup-site.timer
+DropInPaths=
+[exit code: 0]
