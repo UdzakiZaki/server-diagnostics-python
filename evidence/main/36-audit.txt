@@ -1,9 +1,0 @@
-$ bash -c sudo\ aureport\ -k\ -i\ --summary\ --start\ recent
-
-Key Summary Report
-===========================
-total  key
-===========================
-<no events of interest were found>
-
-[exit code: 0]

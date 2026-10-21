@@ -1,3 +1,0 @@
-$ bash -c sudo\ ausearch\ -k\ nginx_config\ -i\ -ts\ recent\ --success\ no\ \|\ grep\ -E\ \'syscall\|exit\'\ \|\ head\ -6
-<no matches>
-[exit code: 0]
